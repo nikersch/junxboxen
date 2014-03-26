@@ -57,7 +57,7 @@ node default {
   include git
   include hub
   include nginx
-
+  include firefox
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
     fail('Please enable full disk encryption and try again')
@@ -87,4 +87,5 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+#  include firefox
 }
